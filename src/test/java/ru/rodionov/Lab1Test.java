@@ -8,9 +8,7 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Lab1Test {
-
     // ---------- Task 1: area ----------
-
     @Test
     void isPointInArea_upperInside() {
         assertTrue(Lab1.isPointInArea(2.0, 3.0));
@@ -50,8 +48,6 @@ class Lab1Test {
     }
 
     // ---------- Task 2: expression ----------
-    // Формула считается внутри task2(), поэтому проверяем КОНСОЛЬНЫЙ ВЫВОД
-
     @Test
     void task2_printsBigDecimalOne() {
         String out = captureStdout(Lab1::task2);

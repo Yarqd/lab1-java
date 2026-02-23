@@ -3,17 +3,25 @@ package ru.rodionov;
 import java.util.Scanner;
 
 /**
- * Hello world!
- *
+ * Лабораторная работа №1
+ * Выполнил: Родионов Ярослав Витальевич. ПСАПР 2025_2
  */
 public class Lab1 {
 
     private static final Scanner SC = new Scanner(System.in);
 
+    /**
+     * Точка входа в программу.
+     * Запускает экранное меню выбора задач.
+     */
     public static void main(String[] args) {
         runMenu();
     }
 
+    /**
+     * Реализует основной цикл программы.
+     * Отображает меню и обрабатывает выбор пользователя.
+     */
     public static void runMenu() {
         while (true) {
             printMenu();
@@ -39,15 +47,25 @@ public class Lab1 {
         }
     }
 
-    //Данный метод выводит экранное меню для выбора задачи
+    /**
+     * Выводит на экран меню для выбора задачи.
+     */
     public static void printMenu() {
         System.out.println("Выберите, какую задачу будем решать:");
         System.out.println("1 — Задача 1: принадлежность точки области");
         System.out.println("2 — Задача 2: вычисление выражения (float/double/BigDecimal)");
-        System.out.println("3 — Задача 3: ");
+        System.out.println("3 — Задача 3: проверка числа Фибоначчи: ");
         System.out.println("0 — Выход");
     }
 
+    /**
+     * Считывает целое число с клавиатуры и проверяет,
+     * что оно находится в заданном диапазоне.
+     *
+     * @param min минимально допустимое значение
+     * @param max максимально допустимое значение
+     * @return корректно введённое пользователем число
+     */
     public static int readIntInRange(int min, int max) {
         while (true) {
             System.out.print("Введите номер пункта: ");
@@ -65,6 +83,11 @@ public class Lab1 {
         }
     }
 
+    /**
+     * Решение задачи 1.
+     * Определяет, принадлежит ли точка с координатами (X, Y)
+     * заштрихованной области.
+     */
     public static void task1() {
         System.out.println("Задача 1: принадлежность точки области");
 
@@ -85,6 +108,11 @@ public class Lab1 {
         System.out.println("Точка принадлежит заштрихованной области: " + result);
     }
 
+    /**
+     * Решение задачи 2.
+     * Вычисляет значение выражения с использованием типов
+     * float, double и BigDecimal и выводит результаты.
+     */
     public static void task2() {
         System.out.println("Задача 2: вычисление выражения разными типами");
 
@@ -152,6 +180,10 @@ public class Lab1 {
         System.out.println("Результат BigDecimal: " + resultBig);
     }
 
+    /**
+     * Решение задачи 3.
+     * Проверяет, является ли введённое число числом Фибоначчи.
+     */
     public static void task3() {
         System.out.println("Задача 3: проверка числа Фибоначчи");
 
@@ -166,6 +198,13 @@ public class Lab1 {
         }
     }
 
+    /**
+     * Проверяет, принадлежит ли число последовательности Фибоначчи.
+     *
+     * @param k проверяемое неотрицательное число
+     * @return true, если число является числом Фибоначчи,
+     *         false — в противном случае
+     */
     public static boolean isFibonacci(int k) {
         if (k == 0) {
             return true;
@@ -183,6 +222,15 @@ public class Lab1 {
         return b == k;
     }
 
+    /**
+     * Проверяет, принадлежит ли точка с координатами (x, y)
+     * одной из заштрихованных прямоугольных областей.
+     *
+     * @param x координата X
+     * @param y координата Y
+     * @return true, если точка принадлежит области,
+     *         false — в противном случае
+     */
     public static boolean isPointInArea(double x, double y) {
         boolean upperRectangle =
                 x >= 0 && x <= 5 &&
@@ -195,6 +243,13 @@ public class Lab1 {
         return upperRectangle || lowerRectangle;
     }
 
+    /**
+     * Считывает вещественное число с клавиатуры.
+     * При некорректном вводе запрашивает значение повторно.
+     *
+     * @param message сообщение, выводимое пользователю
+     * @return корректно введённое вещественное число
+     */
     public static double readDouble(String message) {
         while (true) {
             System.out.print(message);
